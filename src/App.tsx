@@ -1,4 +1,5 @@
 import Navbar from './components/Navbar'
+import HomeSection from './components/sections/HomeSection'
 
 function App() {
   return (
@@ -7,20 +8,9 @@ function App() {
       <Navbar />
       
       {/* Sections */}
-      <main className="pt-16">
+      <main>
         {/* Home Section */}
-        <section id="home" className="min-h-screen flex items-center justify-center bg-white">
-          <div className="text-center max-w-4xl px-4">
-            <h1 className="text-5xl font-bold mb-6">Welcome to The Book Next Door</h1>
-            <p className="text-xl text-gray-600 mb-8">Your neighborhood bookstore experience</p>
-            <button 
-              onClick={() => document.getElementById('story')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
-            >
-              Learn More
-            </button>
-          </div>
-        </section>
+        <HomeSection />
 
         {/* The Story Behind Section */}
         <section id="story" className="min-h-screen flex items-center justify-center bg-gray-50">

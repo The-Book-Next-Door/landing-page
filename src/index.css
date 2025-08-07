@@ -2,8 +2,8 @@
 
 @theme {
   /* Book Next Door Brand Colors */
-  --color-olive: 87 12% 31%; /* #4A5A45 */
-  --color-taupe: 24 10% 46%; /* #837669 */
-  --color-cream: 36 38% 94%; /* #F7F2EC */
-  --color-dark-accent: 0 0% 20%; /* #333333 */
+  --color-olive: #4A5A45; /* #4A5A45 */
+  --color-taupe: #837669; /* #837669 */
+  --color-cream: #F7F2EC; /* #F7F2EC */
+  --color-dark-accent: #333333; /* #333333 */
 }

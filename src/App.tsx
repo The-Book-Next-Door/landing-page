@@ -1,34 +1,10 @@
+import Navbar from './components/Navbar'
+
 function App() {
-  const sections = [
-    { id: 'home', title: 'Home' },
-    { id: 'about', title: 'About' },
-    { id: 'books', title: 'Books' },
-    { id: 'contact', title: 'Contact' }
-  ]
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    element?.scrollIntoView({ behavior: 'smooth' })
-  }
-
   return (
     <div className="min-h-screen bg-white">
-      {/* Fixed Navigation */}
-      <nav className="fixed top-0 left-0 right-0 bg-white shadow-sm border-b z-50">
-        <div className="max-w-4xl mx-auto px-4 py-4">
-          <div className="flex justify-center space-x-8">
-            {sections.map((section) => (
-              <button
-                key={section.id}
-                onClick={() => scrollToSection(section.id)}
-                className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
-              >
-                {section.title}
-              </button>
-            ))}
-          </div>
-        </div>
-      </nav>
+      {/* Navigation */}
+      <Navbar />
       
       {/* Sections */}
       <main className="pt-16">
@@ -38,7 +14,7 @@ function App() {
             <h1 className="text-5xl font-bold mb-6">Welcome to The Book Next Door</h1>
             <p className="text-xl text-gray-600 mb-8">Your neighborhood bookstore experience</p>
             <button 
-              onClick={() => scrollToSection('about')}
+              onClick={() => document.getElementById('story')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
             >
               Learn More
@@ -46,54 +22,79 @@ function App() {
           </div>
         </section>
 
-        {/* About Section */}
-        <section id="about" className="min-h-screen flex items-center justify-center bg-gray-50">
+        {/* The Story Behind Section */}
+        <section id="story" className="min-h-screen flex items-center justify-center bg-gray-50">
           <div className="text-center max-w-4xl px-4">
-            <h2 className="text-4xl font-bold mb-6">About Us</h2>
+            <h2 className="text-4xl font-bold mb-6">The Story Behind</h2>
             <p className="text-lg text-gray-600 mb-4">
-              We are passionate about bringing books closer to you
+              Every great idea starts with a simple observation
             </p>
             <p className="text-gray-600">
-              Our mission is to create a warm, welcoming space where book lovers can discover their next favorite read.
+              We noticed that finding quality books in local neighborhoods was becoming increasingly difficult. 
+              That's when we decided to bring the bookstore directly to your doorstep.
             </p>
           </div>
         </section>
 
-        {/* Books Section */}
-        <section id="books" className="min-h-screen flex items-center justify-center bg-white">
+        {/* How It Works Section */}
+        <section id="how-it-works" className="min-h-screen flex items-center justify-center bg-white">
           <div className="text-center max-w-4xl px-4">
-            <h2 className="text-4xl font-bold mb-6">Our Books</h2>
+            <h2 className="text-4xl font-bold mb-6">How It Works</h2>
             <p className="text-lg text-gray-600 mb-8">
-              Discover our curated collection
+              Simple, convenient, and community-focused
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="p-6 border rounded-lg">
-                <h3 className="text-xl font-semibold mb-2">Fiction</h3>
-                <p className="text-gray-600">Latest novels and classics</p>
+                <div className="text-3xl mb-4">📱</div>
+                <h3 className="text-xl font-semibold mb-2">Browse</h3>
+                <p className="text-gray-600">Explore our curated collection online</p>
               </div>
               <div className="p-6 border rounded-lg">
-                <h3 className="text-xl font-semibold mb-2">Non-Fiction</h3>
-                <p className="text-gray-600">Educational and inspiring reads</p>
+                <div className="text-3xl mb-4">🚚</div>
+                <h3 className="text-xl font-semibold mb-2">Order</h3>
+                <p className="text-gray-600">Select your books and place an order</p>
               </div>
               <div className="p-6 border rounded-lg">
-                <h3 className="text-xl font-semibold mb-2">Children's</h3>
-                <p className="text-gray-600">Books for young readers</p>
+                <div className="text-3xl mb-4">📚</div>
+                <h3 className="text-xl font-semibold mb-2">Enjoy</h3>
+                <p className="text-gray-600">Get books delivered to your neighborhood</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Contact Section */}
-        <section id="contact" className="min-h-screen flex items-center justify-center bg-gray-50">
+        {/* Why It Matters Section */}
+        <section id="why-it-matters" className="min-h-screen flex items-center justify-center bg-gray-50">
           <div className="text-center max-w-4xl px-4">
-            <h2 className="text-4xl font-bold mb-6">Contact</h2>
+            <h2 className="text-4xl font-bold mb-6">Why It Matters</h2>
             <p className="text-lg text-gray-600 mb-8">
-              Get in touch with us
+              Building stronger communities through books
             </p>
-            <div className="space-y-4">
-              <p className="text-gray-600">Email: hello@thebooknextdoor.com</p>
-              <p className="text-gray-600">Phone: (555) 123-4567</p>
-              <p className="text-gray-600">Address: 123 Book Street, Reading City</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="text-left">
+                <h3 className="text-xl font-semibold mb-3">Community Connection</h3>
+                <p className="text-gray-600">
+                  We believe books bring people together and strengthen neighborhood bonds.
+                </p>
+              </div>
+              <div className="text-left">
+                <h3 className="text-xl font-semibold mb-3">Local Support</h3>
+                <p className="text-gray-600">
+                  Supporting local authors and creating opportunities within the community.
+                </p>
+              </div>
+              <div className="text-left">
+                <h3 className="text-xl font-semibold mb-3">Accessibility</h3>
+                <p className="text-gray-600">
+                  Making quality literature accessible to everyone, regardless of location.
+                </p>
+              </div>
+              <div className="text-left">
+                <h3 className="text-xl font-semibold mb-3">Sustainability</h3>
+                <p className="text-gray-600">
+                  Promoting reading culture while supporting environmental responsibility.
+                </p>
+              </div>
             </div>
           </div>
         </section>

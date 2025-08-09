@@ -1,6 +1,6 @@
 import Navbar from "./components/Navbar/";
 import HomeSection from "./components/Home";
-import ComingSoon from "./components/ComingSoon/ComingSoon";
+import ComingSoon from "./components/ComingSoon";
 
 // App – apply a single, lightweight background to the whole app
 // - Full-viewport gradient + subtle dot pattern

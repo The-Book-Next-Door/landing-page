@@ -48,44 +48,105 @@ export default function ComingSoon({
   })();
 
   return (
-    <section className={["relative pt-10 isolate overflow-hidden", className].join(" ")}>
+    <section
+      className={["relative pt-10 isolate overflow-hidden", className].join(
+        " "
+      )}
+    >
       {/* top hairline */}
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-emerald-500 via-sky-500 to-emerald-500" />
       {showBackgroundDecor && <BackgroundDecor />}
 
       {/* Responsive rails layout */}
       <div className="mx-auto w-full px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-[300px_minmax(0,1fr)_300px] gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-[300px_minmax(0,1fr)_300px] gap-8">
           {/* LEFT RAIL — Countdown card */}
           <aside className="min-w-fit order-2 lg:order-1 lg:sticky top-24 self-start">
-            <div className="rounded-2xl border border-slate-200 bg-white/80 p-5 shadow-sm">
-              <h3 className="text-sm font-semibold text-slate-900">Launch</h3>
+            <div className="group rounded-2xl border border-slate-200 bg-white/90 p-6 shadow-sm hover:shadow-lg transition-all duration-300">
+              {/* Header */}
+              <div className="flex items-center justify-between">
+                <h3 className="text-base font-bold text-slate-900 tracking-tight">
+                  Launch Countdown
+                </h3>
+                <button
+                  type="button"
+                  onClick={() => setShowUTC((v) => !v)}
+                  className="rounded-full border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-900 hover:text-white transition-colors"
+                >
+                  {showUTC ? "Local Time" : "UTC"}
+                </button>
+              </div>
+
+              {/* Launch date */}
               {launchText && (
-                <p className="mt-1 text-xs text-slate-600">
+                <p className="mt-2 text-sm text-slate-600">
                   {showUTC ? "UTC:" : "Local:"}{" "}
-                  <span className="font-medium text-slate-900">{launchText}</span>
+                  <span className="font-semibold text-slate-900">
+                    {launchText}
+                  </span>
                 </p>
               )}
-              <button
-                type="button"
-                onClick={() => setShowUTC((v) => !v)}
-                className="mt-2 inline-flex items-center justify-center rounded-full border border-slate-300 px-3 py-1.5 text-xs font-medium text-slate-700 hover:bg-slate-100"
-              >
-                {showUTC ? "Show Local Time" : "Show UTC"}
-              </button>
 
+              {/* Circular progress + Countdown */}
               {remaining && (
-                <div className="mt-4">
-                  <Countdown remaining={remaining} />
+                <div className="mt-6 flex flex-col items-center">
+                  {/* Progress ring (percentage based on total time) */}
+                  <div className="relative w-28 h-28">
+                    <svg
+                      className="absolute top-0 left-0 w-full h-full"
+                      viewBox="0 0 36 36"
+                    >
+                      <path
+                        className="text-slate-200"
+                        strokeWidth="3"
+                        stroke="currentColor"
+                        fill="none"
+                        strokeLinecap="round"
+                        d="M18 2.0845
+                 a 15.9155 15.9155 0 0 1 0 31.831
+                 a 15.9155 15.9155 0 0 1 0 -31.831"
+                      />
+                      <path
+                        className="text-emerald-500 transition-all duration-500"
+                        strokeWidth="3"
+                        strokeDasharray={`${progress || 0}, 100`}
+                        stroke="currentColor"
+                        fill="none"
+                        strokeLinecap="round"
+                        d="M18 2.0845
+                 a 15.9155 15.9155 0 0 1 0 31.831
+                 a 15.9155 15.9155 0 0 1 0 -31.831"
+                      />
+                    </svg>
+                    <div className="absolute inset-0 flex flex-col items-center justify-center">
+                      <span className="text-2xl font-bold text-slate-900">
+                        {String(remaining.days).padStart(2, "0")}
+                      </span>
+                      <span className="text-xs uppercase text-slate-500">
+                        Days Left
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Countdown component */}
+                  <div className="mt-4 w-full">
+                    <Countdown remaining={remaining} />
+                  </div>
+                </div>
+              )}
+
+              {/* Divider */}
+              {typeof progress === "number" && (
+                <div className="mt-6 border-t border-slate-200 pt-5" />
+              )}
+
+              {/* Progress Bar */}
+              {typeof progress === "number" && (
+                <div className="mt-2">
+                  <Progress value={progress} />
                 </div>
               )}
             </div>
-
-            {typeof progress === "number" && (
-              <div className="mt-4 rounded-2xl border border-slate-200 bg-white/80 p-5 shadow-sm">
-                <Progress value={progress} />
-              </div>
-            )}
           </aside>
 
           {/* CENTER — Main content */}
@@ -132,7 +193,10 @@ export default function ComingSoon({
             ) : null}
 
             {/* Notify + supporters */}
-            <NotifyForm onSubmit={onNotifySubmit} successMessage={successMessage} />
+            <NotifyForm
+              onSubmit={onNotifySubmit}
+              successMessage={successMessage}
+            />
             {supporters?.length ? <Supporters initials={supporters} /> : null}
           </div>
 
@@ -142,15 +206,21 @@ export default function ComingSoon({
               href="#principles"
               className="block rounded-2xl border border-slate-200 bg-white/80 p-4 text-left shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="text-sm font-semibold text-slate-900">Principles</div>
-              <p className="mt-1 text-xs text-slate-600">No feeds. No ads. Local-first. Reader-owned.</p>
+              <div className="text-sm font-semibold text-slate-900">
+                Principles
+              </div>
+              <p className="mt-1 text-xs text-slate-600">
+                No feeds. No ads. Local-first. Reader-owned.
+              </p>
             </a>
             <a
               href="#clubs"
               className="block rounded-2xl border border-slate-200 bg-white/80 p-4 text-left shadow-sm hover:shadow-md transition-shadow"
             >
               <div className="text-sm font-semibold text-slate-900">Clubs</div>
-              <p className="mt-1 text-xs text-slate-600">Small reading circles in libraries and cafés.</p>
+              <p className="mt-1 text-xs text-slate-600">
+                Small reading circles in libraries and cafés.
+              </p>
             </a>
           </aside>
         </div>

@@ -20,7 +20,7 @@ export default function HeroSection() {
         <div className="pointer-events-none absolute -bottom-40 -right-20 h-[28rem] w-[28rem] rounded-full bg-sky-400/20 blur-3xl" />
       </div>
 
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="px-6 lg:px-8">
         {/* Column divider on large screens */}
         <div className="relative">
           <div className="hidden lg:block absolute left-1/2 top-0 -translate-x-1/2 h-full w-px bg-gradient-to-b from-transparent via-slate-300/70 to-transparent" aria-hidden />
@@ -44,25 +44,6 @@ export default function HeroSection() {
               <HeroAnimation />
             </motion.div>
           </motion.div>
-        </div>
-
-        {/* Metrics strip (optional) */}
-        <div className="mt-10 md:mt-14">
-          <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-            {[
-              { label: "Members", value: "12k+" },
-              { label: "Clubs", value: "340" },
-              { label: "Cities", value: "85" },
-              { label: "Events / mo", value: "420" },
-              { label: "Books shared", value: "58k" },
-              { label: "Avg. rating", value: "4.8" },
-            ].map((m) => (
-              <li key={m.label} className="rounded-2xl border border-slate-200/70 bg-white/70 backdrop-blur px-4 py-3 text-center shadow-sm">
-                <div className="text-xl font-bold text-slate-900">{m.value}</div>
-                <div className="text-xs uppercase tracking-wide text-slate-600">{m.label}</div>
-              </li>
-            ))}
-          </ul>
         </div>
 
         {/* Scroll cue */}

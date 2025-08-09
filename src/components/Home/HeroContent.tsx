@@ -1,140 +1,83 @@
-import { useCallback } from "react";
-import { motion } from "framer-motion";
+// HeroContent – lean, no animation, richer content
+// - Keeps your smooth scroll CTA
+// - Adds compact reassurance bullets to avoid empty feel
+// - Secondary quick-links row (roadmap, principles)
+// - No framer-motion, no decorative JS
 
-// ————————————————————————————————————————————————
-// Professional Hero content block
-// - Neutral palette + emerald accent
-// - Accessible focus states and semantic buttons
-// - Subtle entrance motion
-// - Props allow reuse across pages/brands
-// ————————————————————————————————————————————————
-
-type HeroContentProps = {
-  title?: string;
-  highlight?: string;
-  subtitle?: string;
-  /** DOM id to scroll to when a CTA is clicked */
-  scrollTargetId?: string;
-  primaryCtaLabel?: string;
-  secondaryCtaLabel?: string;
-  /** Optional handlers override the default smooth-scroll */
-  onPrimaryClick?: () => void;
-  onSecondaryClick?: () => void;
-  className?: string;
-};
-
-export default function HeroContent({
-  title = "Find Your",
-  highlight = "Book People",
-  subtitle =
-    "Connect with fellow book lovers in your neighborhood. Share stories, swap favorites, and build a community around the books you love.",
-  scrollTargetId = "story",
-  primaryCtaLabel = "Join the Community",
-  secondaryCtaLabel = "Learn More",
-  onPrimaryClick,
-  onSecondaryClick,
-  className = "",
-}: HeroContentProps) {
-  const scrollToTarget = useCallback(() => {
-    const el = document.getElementById(scrollTargetId);
-    el?.scrollIntoView({ behavior: "smooth", block: "start" });
-  }, [scrollTargetId]);
-
-  const handlePrimary = onPrimaryClick ?? scrollToTarget;
-  const handleSecondary = onSecondaryClick ?? scrollToTarget;
+export default function HeroContent() {
+  const scrollToNextSection = () => {
+    const element = document.getElementById("story");
+    element?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
-    <section
-      className={
-        "relative isolate max-w-2xl lg:max-w-3xl " +
-        "space-y-8 md:space-y-10 " +
-        "text-slate-900 " +
-        className
-      }
-    >
-      {/* Background accents */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 [mask-image:radial-gradient(60%_50%_at_40%_20%,#000_30%,transparent_80%)]"
-      >
-        <div className="absolute -top-24 -left-32 h-72 w-72 rounded-full opacity-20 blur-2xl bg-emerald-400" />
-        <div className="absolute -bottom-24 -right-24 h-72 w-72 rounded-full opacity-20 blur-2xl bg-sky-400" />
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-slate-300/60 to-transparent" />
-      </div>
-
-      <motion.header
-        initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-        className="space-y-5 md:space-y-6"
-      >
-        <h1 className="text-balance font-extrabold tracking-tight leading-tight text-4xl md:text-5xl lg:text-6xl">
-          <span className="block text-slate-900">{title}</span>{" "}
-          <span className="bg-gradient-to-br from-emerald-600 via-emerald-500 to-sky-500 bg-clip-text text-transparent">
-            {highlight}
+    <section className="space-y-8">
+      <header className="space-y-4">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900">
+          Build a Calm Space for
+          {" "}
+          <span className="bg-gradient-to-br from-emerald-600 to-sky-600 bg-clip-text text-transparent">
+            Book People
           </span>
         </h1>
-
-        <p className="text-pretty max-w-xl text-base md:text-lg leading-relaxed text-slate-600">
-          {subtitle}
+        <p className="text-base md:text-lg leading-relaxed text-slate-600 max-w-xl">
+          We’re crafting a quiet, clutter‑free hub for readers. The focus: simple local meetups,
+          thoughtful swaps, and tools that reduce noise—so you can read more and doomscroll less.
         </p>
-      </motion.header>
+      </header>
 
-      {/* Action Buttons */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.1, duration: 0.45, ease: "easeOut" }}
-        className="flex flex-col sm:flex-row gap-3 sm:gap-4"
-      >
+      {/* CTAs */}
+      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
         <button
-          onClick={handlePrimary}
-          className={[
-            "group inline-flex items-center justify-center gap-2",
-            "rounded-full px-6 sm:px-7 py-3 sm:py-3.5",
-            "font-semibold",
-            "bg-emerald-600 text-white shadow-sm",
-            "hover:bg-emerald-700 hover:shadow",
-            "active:bg-emerald-800",
-            "focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2",
-            "transition-all duration-200",
-          ].join(" ")}
-          aria-label={primaryCtaLabel}
+          onClick={scrollToNextSection}
+          className="inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-white font-semibold hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2"
         >
-          {primaryCtaLabel}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="h-5 w-5 transition-transform group-hover:translate-x-0.5"
-            aria-hidden
-          >
-            <path d="M5 12h14" />
-            <path d="m12 5 7 7-7 7" />
-          </svg>
+          See how it works
         </button>
+        <a
+          href="#roadmap"
+          className="inline-flex items-center justify-center rounded-full border border-slate-300 px-6 py-3 font-semibold text-slate-800 hover:bg-slate-900 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2"
+        >
+          View roadmap
+        </a>
+      </div>
 
-        <button
-          onClick={handleSecondary}
-          className={[
-            "inline-flex items-center justify-center",
-            "rounded-full px-6 sm:px-7 py-3 sm:py-3.5",
-            "font-semibold",
-            "border border-slate-300 text-slate-800",
-            "hover:bg-slate-900 hover:text-white",
-            "active:bg-slate-800",
-            "focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2",
-            "transition-colors duration-200",
-          ].join(" ")}
-          aria-label={secondaryCtaLabel}
-        >
-          {secondaryCtaLabel}
-        </button>
-      </motion.div>
+      {/* Reassurance bullets (lightweight, no motion) */}
+      <ul className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl">
+        {[
+          { h: "Local‑first", p: "Find nearby readers and clubs—quality over feeds.", icon: (
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          ) },
+          { h: "Private by default", p: "Your shelf stays on your device until you share.", icon: (
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          ) },
+          { h: "No ads", p: "A calm product, funded by members not ads.", icon: (
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M8 8l8 8M16 8l-8 8"/></svg>
+          ) },
+        ].map((f) => (
+          <li key={f.h} className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-sm">
+            <span className="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-emerald-600 text-white" aria-hidden>
+              {f.icon}
+            </span>
+            <div>
+              <div className="font-semibold text-slate-900 text-sm">{f.h}</div>
+              <p className="text-xs text-slate-600 mt-0.5">{f.p}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+
+      {/* Quick links row (optional) */}
+      <div className="flex flex-wrap gap-2 text-sm text-slate-600">
+        <a href="#principles" className="inline-flex items-center gap-1 rounded-full border border-slate-200 px-3 py-1.5 hover:bg-slate-100">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 19.5V4.5a2 2 0 0 1 2-2h12"/><path d="M20 22V6.5a2 2 0 0 0-2-2H6"/><path d="M8 10h6M8 14h8M8 18h3"/></svg>
+          Product principles
+        </a>
+        <a href="#faq" className="inline-flex items-center gap-1 rounded-full border border-slate-200 px-3 py-1.5 hover:bg-slate-100">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 1 1 3.9 3.6c-.6.3-1 .9-1 1.6V15"/><path d="M12 19h.01"/></svg>
+          FAQ
+        </a>
+      </div>
     </section>
   );
 }

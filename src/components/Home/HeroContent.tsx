@@ -1,9 +1,3 @@
-// HeroContent – lean, no animation, richer content
-// - Keeps your smooth scroll CTA
-// - Adds compact reassurance bullets to avoid empty feel
-// - Secondary quick-links row (roadmap, principles)
-// - No framer-motion, no decorative JS
-
 export default function HeroContent() {
   const scrollToNextSection = () => {
     const element = document.getElementById("story");
@@ -14,17 +8,92 @@ export default function HeroContent() {
     <section className="space-y-8">
       <header className="space-y-4">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900">
-          Build a Calm Space for
-          {" "}
+          Build a Calm Space for{" "}
           <span className="bg-gradient-to-br from-emerald-600 to-sky-600 bg-clip-text text-transparent">
             Book People
           </span>
         </h1>
         <p className="text-base md:text-lg leading-relaxed text-slate-600 max-w-xl">
-          We’re crafting a quiet, clutter‑free hub for readers. The focus: simple local meetups,
-          thoughtful swaps, and tools that reduce noise—so you can read more and doomscroll less.
+          We’re crafting a quiet, clutter-free hub for readers. The focus:
+          simple local meetups, thoughtful swaps, and tools that reduce noise—so
+          you can read more and doomscroll less.
         </p>
       </header>
+
+      {/* Reassurance bullets (compact, non-intrusive) */}
+      <ul className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-slate-700">
+        {/* Card 1 */}
+        <li className="rounded-2xl border border-slate-200 bg-white/80 p-5 shadow-sm hover:shadow-md transition-shadow">
+          <div className="flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-600">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path d="M20 7 10 17l-5-5" />
+              </svg>
+            </div>
+            <h3 className="text-base font-semibold text-slate-900">
+              No ads. No feeds.
+            </h3>
+          </div>
+          <p className="mt-3 text-sm text-slate-600 leading-relaxed">
+            We keep your reading space free of endless feeds and noisy banners.
+          </p>
+        </li>
+
+        {/* Card 2 */}
+        <li className="rounded-2xl border border-slate-200 bg-white/80 p-5 shadow-sm hover:shadow-md transition-shadow">
+          <div className="flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-sky-500/10 text-sky-600">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path d="M20 7 10 17l-5-5" />
+              </svg>
+            </div>
+            <h3 className="text-base font-semibold text-slate-900">
+              Local-first meetups
+            </h3>
+          </div>
+          <p className="mt-3 text-sm text-slate-600 leading-relaxed">
+            Connect with readers near you through small, in-person gatherings.
+          </p>
+        </li>
+
+        {/* Card 3 */}
+        <li className="rounded-2xl border border-slate-200 bg-white/80 p-5 shadow-sm hover:shadow-md transition-shadow">
+          <div className="flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-600">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path d="M20 7 10 17l-5-5" />
+              </svg>
+            </div>
+            <h3 className="text-base font-semibold text-slate-900">
+              Simple book swaps
+            </h3>
+          </div>
+          <p className="mt-3 text-sm text-slate-600 leading-relaxed">
+            Exchange books effortlessly with others, keeping your shelves fresh.
+          </p>
+        </li>
+      </ul>
 
       {/* CTAs */}
       <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -42,14 +111,42 @@ export default function HeroContent() {
         </a>
       </div>
 
-      {/* Quick links row (optional) */}
+      {/* Quick links row */}
       <div className="flex flex-wrap gap-2 text-sm text-slate-600">
-        <a href="#principles" className="inline-flex items-center gap-1 rounded-full border border-slate-200 px-3 py-1.5 hover:bg-slate-100">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 19.5V4.5a2 2 0 0 1 2-2h12"/><path d="M20 22V6.5a2 2 0 0 0-2-2H6"/><path d="M8 10h6M8 14h8M8 18h3"/></svg>
+        <a
+          href="#principles"
+          className="inline-flex items-center gap-1 rounded-full border border-slate-200 px-3 py-1.5 hover:bg-slate-100"
+        >
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <path d="M4 19.5V4.5a2 2 0 0 1 2-2h12" />
+            <path d="M20 22V6.5a2 2 0 0 0-2-2H6" />
+            <path d="M8 10h6M8 14h8M8 18h3" />
+          </svg>
           Product principles
         </a>
-        <a href="#faq" className="inline-flex items-center gap-1 rounded-full border border-slate-200 px-3 py-1.5 hover:bg-slate-100">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 1 1 3.9 3.6c-.6.3-1 .9-1 1.6V15"/><path d="M12 19h.01"/></svg>
+        <a
+          href="#faq"
+          className="inline-flex items-center gap-1 rounded-full border border-slate-200 px-3 py-1.5 hover:bg-slate-100"
+        >
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <path d="M9.1 9a3 3 0 1 1 3.9 3.6c-.6.3-1 .9-1 1.6V15" />
+            <path d="M12 19h.01" />
+          </svg>
           FAQ
         </a>
       </div>

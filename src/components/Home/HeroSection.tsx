@@ -15,7 +15,10 @@ export default function HeroSection() {
       <div className="px-6 lg:px-8">
         {/* Column divider on large screens */}
         <div className="relative">
-          <div className="hidden lg:block absolute left-1/2 top-0 -translate-x-1/2 h-full w-px bg-gradient-to-b from-transparent via-slate-300/70 to-transparent" aria-hidden />
+          <div
+            className="hidden lg:block absolute left-1/2 top-0 -translate-x-1/2 h-full w-px bg-gradient-to-b from-transparent via-slate-300/70 to-transparent"
+            aria-hidden
+          />
 
           <motion.div
             initial="hidden"
@@ -27,12 +30,23 @@ export default function HeroSection() {
             className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center min-h-[70vh]"
           >
             {/* Left Content */}
-            <motion.div variants={{ hidden: { y: 20, opacity: 0 }, show: { y: 0, opacity: 1 } }}>
+            <motion.div
+              variants={{
+                hidden: { y: 20, opacity: 0 },
+                show: { y: 0, opacity: 1 },
+              }}
+            >
               <HeroContent />
             </motion.div>
 
             {/* Right Animation */}
-            <motion.div variants={{ hidden: { y: 20, opacity: 0 }, show: { y: 0, opacity: 1 } }} className="order-first lg:order-none">
+            <motion.div
+              variants={{
+                hidden: { y: 20, opacity: 0 },
+                show: { y: 0, opacity: 1 },
+              }}
+              className="order-first lg:order-none"
+            >
               <HeroAnimation />
             </motion.div>
           </motion.div>

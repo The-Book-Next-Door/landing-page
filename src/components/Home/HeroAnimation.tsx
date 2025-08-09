@@ -46,7 +46,7 @@ export default function HeroAnimation() {
   return (
     <aside
       className={[
-        "relative aspect-[4/3] w-full max-w-xl mx-auto",
+        "relative aspect-[4/3] w-full max-w-3xl mx-auto", // increased max-w
         "rounded-3xl border border-slate-200 bg-white/80 backdrop-blur-sm shadow-sm",
         "overflow-hidden",
       ].join(" ")}
@@ -62,17 +62,16 @@ export default function HeroAnimation() {
           animationData={animationData}
           autoplay={shouldAutoplay}
           loop={true}
-          // For browsers honoring reduced motion, render first frame only
           initialSegment={reduceMotion ? [0, 1] : undefined}
           rendererSettings={{ preserveAspectRatio: "xMidYMid meet" }}
-          className="w-full h-full max-w-md md:max-w-lg pointer-events-none select-none"
+          className="w-full h-full max-w-2xl md:max-w-3xl pointer-events-none select-none" // increased max-w
         />
       </div>
 
       {/* Optional caption; safe to remove if you want it even leaner */}
       <div className="absolute bottom-3 left-1/2 -translate-x-1/2">
         <div className="rounded-full bg-white/90 px-3.5 py-1.5 text-xs text-slate-600 shadow-sm">
-          Minimal • Quiet • Reader‑first
+          Coffe • Nature • Book
         </div>
       </div>
     </aside>

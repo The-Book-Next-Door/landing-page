@@ -27,7 +27,10 @@ export default function ComingSoon({
   onNotifySubmit,
   className = "",
 }: ComingSoonProps) {
-  const target = useMemo(() => (launchDate ? new Date(launchDate) : null), [launchDate]);
+  const target = useMemo(
+    () => (launchDate ? new Date(launchDate) : null),
+    [launchDate]
+  );
   const [now, setNow] = useState<Date>(new Date());
 
   useEffect(() => {
@@ -56,18 +59,12 @@ export default function ComingSoon({
   return (
     <section
       className={[
-        "relative mt-24 pt-16",
-        "before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-emerald-400/60 before:to-transparent",
+        "relative pt-16",
         "isolate overflow-hidden",
         className,
       ].join(" ")}
     >
-      {/* background accents */}
-      <div aria-hidden className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-slate-50 to-white" />
-        <div className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 h-64 w-[40rem] rounded-full bg-emerald-400/15 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-24 right-1/2 translate-x-1/2 h-64 w-[36rem] rounded-full bg-sky-400/15 blur-3xl" />
-      </div>
+
 
       <div className="mx-auto max-w-4xl px-6 text-center">
         <motion.h2
@@ -96,7 +93,9 @@ export default function ComingSoon({
           >
             🌱
           </motion.span>
-          <span className="font-semibold text-emerald-700">{programLabel}:</span>
+          <span className="font-semibold text-emerald-700">
+            {programLabel}:
+          </span>
           <span className="text-slate-600">{programBlurb}</span>
         </motion.div>
 
@@ -104,10 +103,22 @@ export default function ComingSoon({
         {remaining && (
           <div className="mt-8">
             <div className="inline-flex items-stretch divide-x divide-slate-200 overflow-hidden rounded-2xl border border-slate-200 bg-white/80 backdrop-blur shadow-sm">
-              {[{k:"Days", v:remaining.days}, {k:"Hours", v:remaining.hours}, {k:"Minutes", v:remaining.minutes}, {k:"Seconds", v:remaining.seconds}].map(({k,v}) => (
-                <div key={k} className="px-5 py-3 first:rounded-l-2xl last:rounded-r-2xl">
-                  <div className="text-2xl md:text-3xl font-bold tabular-nums text-slate-900 text-center">{String(v).padStart(2,'0')}</div>
-                  <div className="text-[11px] uppercase tracking-wider text-slate-500 text-center">{k}</div>
+              {[
+                { k: "Days", v: remaining.days },
+                { k: "Hours", v: remaining.hours },
+                { k: "Minutes", v: remaining.minutes },
+                { k: "Seconds", v: remaining.seconds },
+              ].map(({ k, v }) => (
+                <div
+                  key={k}
+                  className="px-5 py-3 first:rounded-l-2xl last:rounded-r-2xl"
+                >
+                  <div className="text-2xl md:text-3xl font-bold tabular-nums text-slate-900 text-center">
+                    {String(v).padStart(2, "0")}
+                  </div>
+                  <div className="text-[11px] uppercase tracking-wider text-slate-500 text-center">
+                    {k}
+                  </div>
                 </div>
               ))}
             </div>
@@ -119,7 +130,9 @@ export default function ComingSoon({
           <div className="mx-auto mt-6 max-w-xl">
             <div className="flex items-center justify-between text-xs text-slate-600">
               <span>Build Progress</span>
-              <span className="tabular-nums font-medium">{Math.max(0, Math.min(100, Math.round(progress)))}%</span>
+              <span className="tabular-nums font-medium">
+                {Math.max(0, Math.min(100, Math.round(progress)))}%
+              </span>
             </div>
             <div className="mt-2 h-2 rounded-full bg-slate-200">
               <div
@@ -132,8 +145,13 @@ export default function ComingSoon({
         )}
 
         {/* Notify form */}
-        <form onSubmit={handleSubmit} className="mx-auto mt-8 flex w-full max-w-md items-center gap-2">
-          <label htmlFor="notify-email" className="sr-only">Email address</label>
+        <form
+          onSubmit={handleSubmit}
+          className="mx-auto mt-8 flex w-full max-w-md items-center gap-2"
+        >
+          <label htmlFor="notify-email" className="sr-only">
+            Email address
+          </label>
           <input
             id="notify-email"
             type="email"
@@ -153,7 +171,8 @@ export default function ComingSoon({
 
         {/* Small print */}
         <p className="mx-auto mt-3 max-w-md text-xs text-slate-500">
-          No spam. We’ll email you only when the feature is live (and maybe send you a tree photo 🌳).
+          No spam. We’ll email you only when the feature is live (and maybe send
+          you a tree photo 🌳).
         </p>
       </div>
     </section>

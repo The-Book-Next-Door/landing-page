@@ -12,14 +12,6 @@ import HeroAnimation from "./HeroAnimation";
 export default function HeroSection() {
   return (
     <section className="relative isolate overflow-hidden">
-      {/* Background gradient + pattern */}
-      <div aria-hidden className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-50 via-white to-slate-50" />
-        <div className="absolute inset-0 opacity-40 [background-image:radial-gradient(rgba(2,6,23,0.06)_1px,transparent_1px)] [background-size:16px_16px] [mask-image:linear-gradient(to_bottom,black,transparent_85%)]" />
-        <div className="pointer-events-none absolute -top-40 -left-32 h-96 w-96 rounded-full bg-emerald-400/20 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-40 -right-20 h-[28rem] w-[28rem] rounded-full bg-sky-400/20 blur-3xl" />
-      </div>
-
       <div className="px-6 lg:px-8">
         {/* Column divider on large screens */}
         <div className="relative">
@@ -44,17 +36,6 @@ export default function HeroSection() {
               <HeroAnimation />
             </motion.div>
           </motion.div>
-        </div>
-
-        {/* Scroll cue */}
-        <div className="mt-10 flex items-center justify-center">
-          <a href="#story" className="group inline-flex items-center gap-2 rounded-full border border-slate-300 px-4 py-2 text-sm text-slate-700 hover:bg-slate-900 hover:text-white transition-colors">
-            <span>Explore the story</span>
-            <svg className="h-4 w-4 transition-transform group-hover:translate-y-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M12 5v14" />
-              <path d="m19 12-7 7-7-7" />
-            </svg>
-          </a>
         </div>
       </div>
     </section>

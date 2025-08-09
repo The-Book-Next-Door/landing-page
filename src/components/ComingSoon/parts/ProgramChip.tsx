@@ -17,10 +17,11 @@ export default function ProgramChip({
         transition={{ repeat: Infinity, duration: 3.2, ease: "easeInOut" }}
         className="text-2xl"
       >
-        🌱
+        📚
       </motion.span>
       <span className="font-semibold text-emerald-700">{label}:</span>
       <span className="text-slate-600">{blurb}</span>
     </div>
   );
 }
+

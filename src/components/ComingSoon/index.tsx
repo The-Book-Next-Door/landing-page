@@ -13,8 +13,8 @@ import Supporters from "./parts/Supporters";
 
 export default function ComingSoon({
   title = "COMING SOON…",
-  programLabel = "Plant a Tree Program",
-  programBlurb = "For every book swap, we'll plant a tree in your community.",
+ programLabel = "Reader-to-Reader Exchange",
+  programBlurb = "Swap once-loved books, join nearby meetups, and keep stories moving.",
   launchDate,
   progress,
   onNotifySubmit,
@@ -23,7 +23,7 @@ export default function ComingSoon({
   features,
   roadmap,
   supporters,
-  successMessage = "You're on the list. We’ll ping you at launch!",
+  successMessage = "You're on the list. We’ll email you when we open invites!",
   showBackgroundDecor = true,
 }: Readonly<ComingSoonProps>) {
   const { remaining, launchLine } = useCountdown(launchDate);

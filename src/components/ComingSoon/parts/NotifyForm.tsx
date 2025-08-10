@@ -35,7 +35,7 @@ export default function NotifyForm({
     <>
       <form
         onSubmit={handleSubmit}
-        className="mx-auto mt-10 flex w-full max-w-md items-center gap-2"
+        className="mx-auto mt-10 flex w-full items-center gap-2"
         aria-describedby="notify-help"
       >
         <label htmlFor="notify-email" className="sr-only">

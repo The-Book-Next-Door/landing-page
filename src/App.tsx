@@ -29,6 +29,24 @@ export default function App() {
             onNotifySubmit={async (email) => {
               console.log("notify:", email);
             }}
+
+            roadmap={[
+              {
+                title: "UX Design Drafts",
+                status: "in-progress",
+                eta: "August 2025",
+              },
+              {
+                title: "Basic App Structure Setup",
+                status: "in-progress",
+                eta: "August 2025",
+              },
+              {
+                title: "Core Feature Prototypes",
+                status: "next",
+                eta: "September 2025",
+              },
+            ]}
             supporters={["JS", "AL", "KP", "MN", "RB", "TT", "XZ"]}
           />
         </section>

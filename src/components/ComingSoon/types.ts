@@ -10,8 +10,8 @@ export type ComingSoonProps = {
   title?: string;
   programLabel?: string;
   programBlurb?: string;
-  launchDate?: Date | string;
-  progress?: number;
+  launchDate: Date | string;
+  progress: number;
   onNotifySubmit?: (email: string) => Promise<void> | void;
   className?: string;
 

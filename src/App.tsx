@@ -3,6 +3,7 @@ import HomeSection from "./components/Home";
 import ComingSoon from "./components/ComingSoon";
 import StoryBehind from "./components/Story";
 import GradientBlurBackground from "./components/Background";
+import Team from "./components/Team";
 
 export default function App() {
   return (
@@ -57,6 +58,10 @@ export default function App() {
           {/* Story Behinde Section */}
           <section id="storybehinde" className="">
             <StoryBehind />
+          </section>
+
+          <section id="our-team">
+            <Team/>
           </section>
         </main>
       </div>

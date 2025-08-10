@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Jane Smith",
+    "role": "Founder & Product Lead",
+    "avatar": "https://randomuser.me/api/portraits/women/44.jpg",
+    "bio": "Book lover, product designer, and community builder."
+  },
+  {
+    "name": "Alex Johnson",
+    "role": "Engineering",
+    "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+    "bio": "Full-stack dev, reader, and open source enthusiast."
+  },
+  {
+    "name": "Maria Lee",
+    "role": "Community & Partnerships",
+    "avatar": "https://randomuser.me/api/portraits/women/68.jpg",
+    "bio": "Connecting readers and building safe, welcoming spaces."
+  }
+]

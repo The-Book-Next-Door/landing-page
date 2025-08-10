@@ -1,6 +1,6 @@
 import { LINKS } from "./constants";
 
-type Props = { active: string };
+type Props = { readonly active: string };
 
 export default function DesktopLinks({ active }: Props) {
   return (

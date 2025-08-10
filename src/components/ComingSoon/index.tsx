@@ -24,7 +24,7 @@ export default function ComingSoon({
   showBackgroundDecor = true,
 }: Readonly<ComingSoonProps>) {
   return (
-    <section
+    <div
       className={["relative pt-10 isolate overflow-hidden", className].join(
         " "
       )}
@@ -123,6 +123,6 @@ export default function ComingSoon({
           </aside>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

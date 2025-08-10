@@ -32,10 +32,10 @@ export default function ComingSoon({
       {showBackgroundDecor && <BackgroundDecor />}
 
       {/* Responsive rails layout */}
-      <div className="mx-auto w-full px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-24">
+      <div className="mx-auto w-full px-4 sm:px-6">
+        <div className="grid grid-cols-1 gap-10 md:gap-16 lg:grid-cols-3 lg:gap-24">
           {/* LEFT RAIL — Countdown card */}
-          <aside className="min-w-fit order-2 lg:order-1 lg:sticky top-24 self-start">
+          <aside className="order-2 lg:order-1 lg:sticky top-24 self-start mb-10 lg:mb-0">
             <CountdownCard launchDate={launchDate} progress={progress} />
           </aside>
 
@@ -99,7 +99,7 @@ export default function ComingSoon({
           </div>
 
           {/* RIGHT RAIL — Helpful links / principles */}
-          <aside className="order-3 lg:sticky top-24 self-start space-y-4">
+          <aside className="order-3 mt-10 lg:mt-0 lg:sticky top-24 self-start space-y-4">
             <a
               href="#principles"
               className="block rounded-2xl border border-slate-200 bg-white/80 p-4 text-left shadow-sm hover:shadow-md transition-shadow"

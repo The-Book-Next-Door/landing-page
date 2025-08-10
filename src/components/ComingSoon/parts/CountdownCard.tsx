@@ -27,16 +27,16 @@ const CountdownCard = ({
   })();
 
   return (
-    <div className="group rounded-2xl border border-slate-200 bg-white/90 p-6 shadow-sm hover:shadow-lg transition-all duration-300">
+    <div className="group rounded-2xl border border-slate-200 bg-white/90 p-4 sm:p-6 shadow-sm hover:shadow-lg transition-all duration-300 w-full max-w-md mx-auto">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
         <h3 className="text-base font-bold text-slate-900 tracking-tight">
           Launch Countdown
         </h3>
         <button
           type="button"
           onClick={() => setShowUTC((v) => !v)}
-          className="rounded-full border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-900 hover:text-white transition-colors"
+          className="rounded-full border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-900 hover:text-white transition-colors mt-2 sm:mt-0"
         >
           {showUTC ? "Local Time" : "UTC"}
         </button>
@@ -54,7 +54,7 @@ const CountdownCard = ({
       {remaining && (
         <div className="mt-6 flex flex-col items-center">
           {/* Progress ring (percentage based on total time) */}
-          <div className="relative w-28 h-28">
+          <div className="relative w-24 h-24 sm:w-28 sm:h-28">
             <svg
               className="absolute top-0 left-0 w-full h-full"
               viewBox="0 0 36 36"

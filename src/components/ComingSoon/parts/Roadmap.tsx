@@ -39,7 +39,7 @@ export default function Roadmap({ items }: { readonly items: Milestone[] }) {
       <h4 className="text-sm font-semibold text-slate-900">Roadmap</h4>
       <ul className="mt-3 space-y-3">
         {items.map((m, i) => (
-          <li key={`${m.title}-${i}`} className="flex items-start gap-3 rounded-xl border border-slate-200 bg-white/80 p-4">
+          <li key={`${m.title}-${i}`} className="flex flex-col sm:flex-row items-start gap-3 rounded-xl border border-slate-200 bg-white/80 p-4">
             <StatusDot status={m.status} />
             <div className="flex-1">
               <div className="flex flex-wrap items-center gap-2">

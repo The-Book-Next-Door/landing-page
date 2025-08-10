@@ -45,6 +45,7 @@ export default function App() {
                 },
               ]}
               supporters={["JS", "AL", "KP", "MN", "RB", "TT", "XZ"]}
+              className="mb-24"
             />
           </section>
 

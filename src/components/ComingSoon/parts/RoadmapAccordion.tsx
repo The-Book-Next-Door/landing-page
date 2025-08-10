@@ -37,8 +37,8 @@ export default function RoadmapAccordion({
             key={`${m.title}-${i}`}
             className="group rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-sm open:shadow-md"
           >
-            <summary className="flex cursor-pointer list-none items-center justify-between gap-3">
-              <div className="flex items-center gap-2">
+            <summary className="flex flex-col sm:flex-row cursor-pointer list-none items-center justify-between gap-3">
+              <div className="flex flex-col sm:flex-row items-center gap-2">
                 <span className="font-medium text-slate-900">{m.title}</span>
                 <StatusChip status={m.status} />
                 {m.eta && (

@@ -4,8 +4,8 @@ export default function Supporters({
   readonly initials: string[];
 }) {
   return (
-    <div className="mx-auto mt-10 flex items-center justify-center gap-2">
-      <div className="flex -space-x-2">
+    <div className="mx-auto mt-10 flex flex-col sm:flex-row items-center justify-center gap-2">
+      <div className="flex -space-x-2 mb-2 sm:mb-0">
         {initials.slice(0, 6).map((i, idx) => (
           <div
             key={idx}

@@ -12,9 +12,7 @@ export default function HomeSection() {
       {/* Content wrapper with consistent horizontal padding */}
       <div id="main-content" className="">
         {/* Hero */}
-        <section className="scroll-mt-24 md:pt-24">
-          <HeroSection />
-        </section>
+        <HeroSection />
       </div>
     </>
   );

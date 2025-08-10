@@ -2,8 +2,24 @@
 
 @theme {
   /* Book Next Door Brand Colors */
-  --color-olive: #4A5A45; /* #4A5A45 */
+  --color-olive: #4a5a45; /* #4A5A45 */
   --color-taupe: #837669; /* #837669 */
-  --color-cream: #F7F2EC; /* #F7F2EC */
+  --color-cream: #f7f2ec; /* #F7F2EC */
   --color-dark-accent: #333333; /* #333333 */
+}
+
+:root {
+  --nav-h: 64px; /* mobile navbar height */
+  --nav-h-lg: 72px; /* desktop navbar height */
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-h); /* offsets anchor jumps */
+}
+
+@media (min-width: 1024px) {
+  html {
+    scroll-padding-top: var(--nav-h-lg);
+  }
 }

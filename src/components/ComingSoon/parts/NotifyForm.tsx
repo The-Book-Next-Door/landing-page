@@ -62,7 +62,7 @@ export default function NotifyForm({
         <button
           type="submit"
           disabled={status === "loading"}
-          className="inline-flex items-center justify-center rounded-full bg-emerald-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-emerald-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 disabled:opacity-60"
+          className="inline-flex items-center justify-center rounded-full text-nowrap bg-emerald-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-emerald-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 disabled:opacity-60"
         >
           {status === "loading" ? "Sending…" : "Notify Me"}
         </button>

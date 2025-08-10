@@ -2,17 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import Lottie from "lottie-react";
 import animationData from "../../assets/animation/woman-reading-book-under-the-tree.json";
 
-// HeroAnimation – lean, accessible, and light on CPU
-// - Keeps Lottie (as requested)
-// - No client/social-proof, no play/pause, no parallax
-// - Autoplay only when in viewport (IntersectionObserver)
-// - Respects reduced motion: renders first frame without autoplay
-// - Single run (loop=false) to avoid busy feel
-// - Pure CSS background pattern (no JS)
-
 export default function HeroAnimation() {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const [inView, setInView] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
 
   useEffect(() => {
@@ -60,7 +51,7 @@ export default function HeroAnimation() {
 
       {/* Optional caption; now with a soft accent and icon */}
       <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-20">
-        <div className="inline-flex items-center gap-2 rounded-full bg-white/95 px-4 py-1.5 text-xs text-slate-700 shadow-md border border-slate-100">
+        <div className="inline-flex items-center gap-2 rounded-full bg-white/95 px-4 py-1.5 text-base text-slate-700 shadow-md border border-slate-100">
           <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" className="text-emerald-500"><circle cx="8" cy="8" r="7" /><path d="M8 4v4l2.5 2.5" /></svg>
           Coffee • Nature • Book
         </div>

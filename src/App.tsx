@@ -2,7 +2,7 @@ import Navbar from "./components/Navbar/";
 import HomeSection from "./components/Home";
 import ComingSoon from "./components/ComingSoon";
 import StoryBehind from "./components/Story";
-import GradientBlurBackground from "./Background";
+import GradientBlurBackground from "./components/Background";
 
 export default function App() {
   return (

@@ -1,20 +1,37 @@
 [
   {
-    "name": "Jane Smith",
+    "name": "Petya Pencheva",
     "role": "Founder & Product Lead",
-    "avatar": "https://randomuser.me/api/portraits/women/44.jpg",
-    "bio": "Book lover, product designer, and community builder."
+    "avatar": "https://media.licdn.com/dms/image/v2/D4E03AQGyEY9f_x9gjg/profile-displayphoto-shrink_400_400/B4EZUPfPhbH0Ak-/0/1739721604295?e=1757548800&v=beta&t=RNERxS1KARHJOekbB4G9Dm4WIBLRhTVprBksreC-EiE",
+    "bio": "Book lover, product designer, and community builder.",
+    "socials": []
   },
   {
-    "name": "Alex Johnson",
-    "role": "Engineering",
-    "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
-    "bio": "Full-stack dev, reader, and open source enthusiast."
-  },
-  {
-    "name": "Maria Lee",
-    "role": "Community & Partnerships",
-    "avatar": "https://randomuser.me/api/portraits/women/68.jpg",
-    "bio": "Connecting readers and building safe, welcoming spaces."
+    "id": "stefan-penchev",
+    "name": "Stefan Penchev",
+    "role": "Software Developer",
+    "avatar": "https://media.licdn.com/dms/image/v2/D4E03AQE9tQwxUgAbVw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1720776767929?e=1757548800&v=beta&t=VibLUiiuQXkRXuMGEaSr2dyl3L5ceazpH4p94KtomZI",
+    "bio": "I’m a MERN-stack developer with 10 years’ experience crafting scalable React/TypeScript apps. I also leverage C++ and Python to explore ML and mathematical solutions.",
+    "specialties": [
+      "Frontend Development",
+      "System Architecture",
+      "API Integration",
+      "Performance Optimization"
+    ],
+    "experience": "10 years",
+    "socials": [
+      {
+        "label": "linkedin",
+        "url": "https://www.linkedin.com/in/stefan-penchev-31b94a318/"
+      },
+      {
+        "label": "web",
+        "url": "https://stefanpenchev05.github.io/Portfolio/"
+      },
+      {
+        "label": "email",
+        "url": "mailto:penchev.stefan@icloud.com"
+      }
+    ]
   }
 ]

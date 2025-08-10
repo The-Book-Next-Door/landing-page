@@ -11,7 +11,7 @@ export default function StoryBehind({
   className = "",
 }: Readonly<StoryBehindProps>) {
   return (
-    <div
+    <section
       id={id}
       className={[
         "relative isolate overflow-hidden pb-16 md:py-24",
@@ -50,6 +50,6 @@ export default function StoryBehind({
           you here. Let’s keep stories moving.
         </p>
       </div>
-    </div>
+    </section>
   );
 }

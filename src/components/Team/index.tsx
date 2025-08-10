@@ -1,37 +1,52 @@
-
+import { useMemo } from "react";
+import { motion } from "framer-motion";
 import team from "./team.json";
+import LeadCard from "./LeadCard";
+import MemberCard from "./MemberCard";
+import type { TeamMember } from "./types";
 
-type TeamMember = {
-  name: string;
-  role: string;
-  avatar: string;
-  bio: string;
-};
+export default function Team() {
+  const members = useMemo(() => team as TeamMember[], []);
+  const [lead, ...others] = members;
 
-export default function TeamSection() {
   return (
-    <section id="team" className="py-20">
-      <div className="mx-auto max-w-5xl px-4 text-center">
-        <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900 mb-2">
-          Meet Our Team
-        </h2>
-        <p className="mb-10 text-slate-600 max-w-2xl mx-auto">
-          A small, passionate group of readers, makers, and community builders.
-        </p>
-        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {(team as TeamMember[]).map((member) => (
-            <li key={member.name} className="flex flex-col items-center bg-white/90 rounded-2xl shadow-md p-6">
-              <img
-                src={member.avatar}
-                alt={member.name}
-                className="h-20 w-20 rounded-full object-cover border-2 border-emerald-100 shadow-sm mb-3"
-              />
-              <h3 className="text-lg font-semibold text-slate-900">{member.name}</h3>
-              <span className="text-sm text-emerald-700 font-medium mb-1">{member.role}</span>
-              <p className="text-sm text-slate-600 mt-1">{member.bio}</p>
-            </li>
+    <section
+      id="team"
+      className="relative isolate overflow-hidden py-20 md:py-24"
+    >
+      {/* Background */}
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle,rgba(15,23,42,0.04)_1px,transparent_1px)] bg-[size:18px_18px]" />
+
+      <div className="mx-auto max-w-6xl px-6">
+        <header className="text-center">
+          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900">
+            Meet Our Team
+          </h2>
+          <p className="mt-3 text-slate-600 max-w-2xl mx-auto">
+            A small, hands-on group of readers, makers, and community builders.
+          </p>
+        </header>
+
+        {lead && (
+          <div className="mt-12">
+            <LeadCard member={lead} />
+          </div>
+        )}
+
+        {others.length > 0 &&
+          (others.length === 1 ? (
+            <div className="mt-8 max-w-md mx-auto">
+              <MemberCard member={others[0]} />
+            </div>
+          ) : (
+            <motion.ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {others.map((m) => (
+                <motion.li key={m.id || m.name}>
+                  <MemberCard member={m} />
+                </motion.li>
+              ))}
+            </motion.ul>
           ))}
-        </ul>
       </div>
     </section>
   );

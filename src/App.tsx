@@ -9,20 +9,13 @@ export default function App() {
   return (
     <GradientBlurBackground>
       <div className="relative min-h-screen isolate overflow-hidden">
-
-
         {/* Navigation */}
         <Navbar />
 
         {/* Page sections */}
         <main>
           {/* Home Section */}
-          <section
-            id="home"
-            className="flex items-center min-h-screen pb-8 pt-6 md:pt-24"
-          >
-            <HomeSection />
-          </section>
+          <HomeSection />
 
           {/* CountDown Section */}
           <section id="countdown" className="min-h-[70vh]">
@@ -56,13 +49,10 @@ export default function App() {
           </section>
 
           {/* Story Behinde Section */}
-          <section id="storybehinde" className="">
-            <StoryBehind />
-          </section>
+          <StoryBehind />
 
-          <section id="our-team">
-            <Team/>
-          </section>
+          {/* Our Team Section */}
+          <Team />
         </main>
       </div>
     </GradientBlurBackground>

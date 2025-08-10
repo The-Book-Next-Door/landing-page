@@ -8,12 +8,15 @@ import HeroSection from "./HeroSection";
 
 export default function HomeSection() {
   return (
-    <>
+    <section
+      id="home"
+      className="flex items-center min-h-screen pb-8 pt-6 md:pt-24"
+    >
       {/* Content wrapper with consistent horizontal padding */}
       <div id="main-content" className="">
         {/* Hero */}
         <HeroSection />
       </div>
-    </>
+    </section>
   );
 }

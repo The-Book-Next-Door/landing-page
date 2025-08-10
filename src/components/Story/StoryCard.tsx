@@ -24,7 +24,7 @@ export default function StoryCard({
   layout = "image",
   size = "lg",
   emphasize = false,
-}: Props) {
+}: Readonly<Props>) {
   const Wrapper = item.href ? "a" : "div";
   const pad = compact ? "p-4" : PAD[size];
 
@@ -87,7 +87,7 @@ export default function StoryCard({
   );
 }
 
-function Kicker({ children }: { children: React.ReactNode }) {
+function Kicker({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <span className="inline-block text-[11px] uppercase tracking-wider text-slate-500">
       {children}
@@ -116,11 +116,11 @@ function ScrimImage({
   src,
   alt,
   className = "",
-}: {
+}: Readonly<{
   src: string;
   alt: string;
   className?: string;
-}) {
+}>) {
   return (
     <div className={["relative w-full", className].join(" ")}>
       <img

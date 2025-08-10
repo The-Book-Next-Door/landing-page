@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import StoryGrid from "./StoryGrid";
-import StoryCarousel from "./StoryCarousel";
 import { defaultItems } from "./data";
 import type { StoryBehindProps } from "./types";
 
@@ -45,7 +44,6 @@ export default function StoryBehind({
         </header>
 
         <StoryGrid items={items} />
-        <StoryCarousel items={items} />
 
         <p className="mx-auto mt-10 max-w-3xl text-center text-slate-600">
           Whether you’re a reader, a gifter, or a swapper—there’s a place for

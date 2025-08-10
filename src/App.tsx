@@ -18,7 +18,7 @@ export default function App() {
           <HomeSection />
 
           {/* CountDown Section */}
-          <section id="countdown" className="min-h-[70vh]">
+          <section id="countdown" className="min-h-[60vh]">
             <ComingSoon
               showBackgroundDecor={false}
               title="Beta launching soon"
@@ -45,7 +45,7 @@ export default function App() {
                 },
               ]}
               supporters={["JS", "AL", "KP", "MN", "RB", "TT", "XZ"]}
-              className="mb-24"
+              className="mb-24 min-h-full"
             />
           </section>
 

@@ -1,6 +1,6 @@
 import { LINKS } from "./constants";
 
-type Props = { open: boolean; active: string; setOpen: (v: boolean) => void };
+type Props = { readonly open: boolean; readonly active: string; readonly setOpen: (v: boolean) => void };
 
 export default function MobileMenu({ open, active, setOpen }: Props) {
   return (

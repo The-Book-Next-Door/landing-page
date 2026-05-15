@@ -1,6 +1,7 @@
 import { ArrowUpRight, MapPin, Search, Sparkles } from "lucide-react";
 
-import { heroHighlights } from "./data";
+import { heroHighlights, launchAt } from "./data";
+import { LaunchCountdown } from "./launch-countdown";
 
 export function HeroSection() {
   return (
@@ -68,6 +69,7 @@ export function HeroSection() {
           A neighborhood sanctuary for swapping, selling, and discovering pre-loved books from
           readers just around the corner.
         </p>
+        <LaunchCountdown launchAt={launchAt} />
         <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center animate-fade-up [animation-delay:240ms]">
           <button className="group inline-flex items-center justify-center gap-2 bg-ink text-paper px-7 py-4 rounded-full font-medium hover:bg-clay transition-all duration-300">
             <Search className="size-4" />

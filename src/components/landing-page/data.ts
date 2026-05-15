@@ -14,6 +14,8 @@ export const heroHighlights = [
   { src: book2, alt: "Hardcover book", label: "SWAP ONLY", location: "" },
 ] as const;
 
+export const launchAt = "2026-07-01T09:00:00+02:00";
+
 export const listings = [
   { title: "The Art of Living", author: "Epictetus", img: marketplaceHero, span: "md:col-span-2", aspect: "aspect-[16/10]", tag: "AVAILABLE", tagClass: "bg-forest text-paper", meta: "Mint · Limpertsberg", offset: "" },
   { title: "Quiet Moments", author: "Mary Oliver", img: bookPoetry, span: "md:col-span-1", aspect: "aspect-[3/4]", tag: "WISHLIST MATCH", tagClass: "bg-clay/10 text-clay", meta: "Free · Belair", offset: "md:mt-12" },

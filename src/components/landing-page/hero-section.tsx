@@ -1,6 +1,6 @@
-import { ArrowUpRight, MapPin, Search, Sparkles } from "lucide-react";
+import { ArrowUpRight, AtSign, Instagram, MapPin, Search, Sparkles } from "lucide-react";
 
-import { heroHighlights, launchAt } from "./data";
+import { heroHighlights, launchAt, socialLinks, socialProofMembers } from "./data";
 import { LaunchCountdown } from "./launch-countdown";
 
 export function HeroSection() {
@@ -81,12 +81,45 @@ export function HeroSection() {
           </button>
         </div>
 
-        <div className="mt-16 flex items-center justify-center gap-8 text-[10px] font-mono uppercase tracking-widest text-ink/40 animate-fade-up [animation-delay:320ms]">
-          <span>2,400+ readers</span>
-          <span className="size-1 rounded-full bg-ink/20" />
-          <span>14 neighborhoods</span>
-          <span className="size-1 rounded-full bg-ink/20" />
-          <span>Lux. City</span>
+        <div className="mt-14 flex flex-col items-center gap-5 animate-fade-up [animation-delay:320ms]">
+          <div className="inline-flex items-center">
+            {socialProofMembers.map((member, index) => (
+              <span
+                key={member.name}
+                title={member.name}
+                className={`grid place-items-center size-10 rounded-full border-2 border-paper bg-forest/15 text-[10px] font-mono uppercase tracking-wider text-forest ${
+                  index > 0 ? "-ml-2" : ""
+                }`}
+              >
+                {member.initials}
+              </span>
+            ))}
+          </div>
+
+          <p className="text-xs sm:text-sm text-ink/60">
+            Joined by local readers already following the launch.
+          </p>
+
+          <div className="flex flex-col sm:flex-row items-center gap-3">
+            <a
+              href={socialLinks.instagram}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center gap-2 bg-ink text-paper px-5 py-2.5 rounded-full text-xs font-medium uppercase tracking-wider hover:bg-clay transition-colors duration-300"
+            >
+              <Instagram className="size-4" />
+              Instagram
+            </a>
+            <a
+              href={socialLinks.threads}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center gap-2 border border-ink/15 px-5 py-2.5 rounded-full text-xs font-medium uppercase tracking-wider hover:bg-sand transition-colors duration-300"
+            >
+              <AtSign className="size-4" />
+              Threads
+            </a>
+          </div>
         </div>
       </div>
     </section>

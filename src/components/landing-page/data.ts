@@ -16,6 +16,19 @@ export const heroHighlights = [
 
 export const launchAt = "2026-07-01T09:00:00+02:00";
 
+export const socialProofMembers = [
+  { initials: "LM", name: "Lea M." },
+  { initials: "AT", name: "Alex T." },
+  { initials: "SR", name: "Sofia R." },
+  { initials: "ND", name: "Noah D." },
+  { initials: "EK", name: "Emma K." },
+] as const;
+
+export const socialLinks = {
+  instagram: "https://www.instagram.com/booknextdoor.lu/",
+  threads: "https://www.threads.com/@booknextdoor.lu?xmt=AQG0zWDBnH-svjyRo4OHVEZCCciR5E5Zf2doyFuwlOU6QhE",
+} as const;
+
 export const listings = [
   { title: "The Art of Living", author: "Epictetus", img: marketplaceHero, span: "md:col-span-2", aspect: "aspect-[16/10]", tag: "AVAILABLE", tagClass: "bg-forest text-paper", meta: "Mint · Limpertsberg", offset: "" },
   { title: "Quiet Moments", author: "Mary Oliver", img: bookPoetry, span: "md:col-span-1", aspect: "aspect-[3/4]", tag: "WISHLIST MATCH", tagClass: "bg-clay/10 text-clay", meta: "Free · Belair", offset: "md:mt-12" },
